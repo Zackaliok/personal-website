@@ -12,24 +12,20 @@ services:
       - app_network
 
   api:
-    image: node:latest
+    build: /home/zackaliok/personal-website/api
     container_name: api_container
     ports:
       - "3000:3000"
-    volumes:
-      - api:/usr/src/app
     networks:
       - app_network
     depends_on:
       - mongodb
 
   front:
-    image: node:latest
+    build: /home/zackaliok/personal-website/front
     container_name: front_container
     ports:
       - "8080:8000"
-    volumes:
-      - front:/usr/src/app
     networks:
       - app_network
     depends_on:
@@ -41,5 +37,3 @@ networks:
 
 volumes:
   mongodb_data:
-  api:
-  front:
