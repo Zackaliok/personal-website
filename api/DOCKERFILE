@@ -1,0 +1,20 @@
+# Utilisation d'une image de Node.js comme base
+FROM node:14
+
+# Création du répertoire de travail
+WORKDIR /opt/personnal-website/api
+
+# Copie des fichiers package.json et package-lock.json pour installer les dépendances
+COPY package*.json ./
+
+# Installation des dépendances
+RUN npm install
+
+# Copie de tous les fichiers du répertoire courant vers le répertoire de travail dans l'image
+COPY . .
+
+# Exposition du port sur lequel l'API s'exécute
+EXPOSE 3000
+
+# Commande pour démarrer l'API
+CMD ["npm", "start"]

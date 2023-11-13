@@ -1,0 +1,18 @@
+# Utilisation d'une image de base
+FROM node:14
+
+# Création du répertoire de travail
+WORKDIR /opt/personnal-website/front
+
+# Installation des dépendances
+COPY package*.json ./
+RUN npm install
+
+# Copie des fichiers de l'application
+COPY . .
+
+# Construction de l'application
+RUN npm run build
+
+# Commande pour démarrer l'application
+CMD [ "npm", "start" ]
