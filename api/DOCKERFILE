@@ -2,7 +2,7 @@
 FROM node:14
 
 # Création du répertoire de travail
-WORKDIR /home/orangepi/personal-website/api
+WORKDIR /home/zackaliok/personal-website/api
 
 # Copie des fichiers package.json et package-lock.json pour installer les dépendances
 COPY package*.json ./
