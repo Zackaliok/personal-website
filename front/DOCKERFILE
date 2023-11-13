@@ -2,7 +2,7 @@
 FROM node:14
 
 # Création du répertoire de travail
-WORKDIR /opt/personnal-website/front
+WORKDIR /home/orangepi/personal-website/front
 
 # Installation des dépendances
 COPY package*.json ./
